@@ -1,0 +1,206 @@
+:root {
+  --bg: #f6f5fb;
+  --surface: #ffffff;
+  --text: #1c1b22;
+  --muted: #6b6878;
+  --border: #e2e0ea;
+  --accent: #6d3fd1;
+  --accent-hover: #5a31b3;
+  --danger: #c0392b;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15141a;
+    --surface: #1f1e26;
+    --text: #ecebf1;
+    --muted: #a09dad;
+    --border: #34323e;
+    --accent: #9b7aea;
+    --accent-hover: #b39af0;
+    --danger: #ef6f61;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px 48px;
+}
+
+[data-amplify-authenticator] {
+  --amplify-components-button-primary-background-color: var(--accent);
+  --amplify-components-button-primary-hover-background-color: var(--accent-hover);
+  --amplify-components-tabs-item-active-color: var(--accent);
+  --amplify-components-tabs-item-active-border-color: var(--accent);
+  margin-top: 8vh;
+}
+
+.app {
+  width: 100%;
+  max-width: 720px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 36px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  min-width: 0;
+}
+
+.user span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+h1 {
+  margin: 32px 0 16px;
+  font-size: 1.75rem;
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+input,
+textarea {
+  font: inherit;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+button.secondary:hover {
+  background: var(--border);
+}
+
+button.link {
+  background: none;
+  color: var(--accent);
+  padding: 4px 0;
+}
+
+button.link.danger {
+  color: var(--danger);
+}
+
+.notes {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.note.editing {
+  border-color: var(--accent);
+}
+
+.note h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.note p {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--muted);
+}
+
+.note-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.empty {
+  color: var(--muted);
+  margin-top: 24px;
+}
+
+.error {
+  color: var(--danger);
+}
